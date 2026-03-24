@@ -1,0 +1,16 @@
+{
+  "name": "xiaoclaw",
+  "version": "0.1.0",
+  "description": "Lightweight AI assistant powered by MoonBit and WebAssembly",
+  "source": "src",
+  "targets": {
+    "wasm": {
+      "output": "dist/xiaoclaw.wasm"
+    },
+    "wasm-gc": {
+      "output": "dist/xiaoclaw-gc.wasm"
+    }
+  },
+  "dependencies": {},
+  "dev-dependencies": {}
+}

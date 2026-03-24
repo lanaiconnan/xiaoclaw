@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.env.local
+.moon/
+dist/
+*.wasm
+*.db
+data/
+logs/
