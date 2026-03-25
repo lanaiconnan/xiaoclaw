@@ -84,3 +84,19 @@ fn env(key: String, default: String) -> String {
     None => default,
   }
 }
+// 飞书配置
+struct FeishuConfig {
+  app_id: String
+  app_secret: String
+  encrypt_key: String
+  verification_token: String
+  enabled: Bool
+}
+
+// 更新 ChannelConfig 添加飞书
+// struct ChannelConfig {
+//   telegram: TelegramConfig
+//   whatsapp: WhatsAppConfig
+//   discord: DiscordConfig
+//   feishu: FeishuConfig  // 新增
+// }

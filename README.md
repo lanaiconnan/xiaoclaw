@@ -149,3 +149,55 @@ MIT License
 ---
 
 **深海团队出品** 🦞
+---
+
+## 📡 飞书 (Feishu/Lark) 集成
+
+### 配置
+
+在 `.env` 文件中添加：
+
+```bash
+FEISHU_APP_ID=your_app_id
+FEISHU_APP_SECRET=your_app_secret
+FEISHU_ENCRYPT_KEY=your_encrypt_key
+FEISHU_VERIFICATION_TOKEN=your_verification_token
+FEISHU_ENABLED=true
+```
+
+### 创建飞书应用
+
+1. 访问 [飞书开放平台](https://open.feishu.cn/)
+2. 创建企业自建应用
+3. 获取 App ID 和 App Secret
+4. 配置事件订阅：
+   - 消息事件: `im.message.receive_v1`
+5. 发布应用
+
+### 使用
+
+在飞书中 @XiaoClaw 或私聊发送消息：
+
+```
+帮我总结今天的工作
+每天早上9点发送新闻摘要
+```
+
+### 卡片消息
+
+XiaoClaw 支持发送飞书卡片消息：
+
+```moonbit
+let card = FeishuCard::simple("标题", "内容")
+feishu_channel.send_card(user_id, card)
+```
+
+### 支持的消息类型
+
+| 类型 | 说明 |
+|------|------|
+| text | 纯文本 |
+| post | 富文本 |
+| interactive | 交互卡片 |
+| image | 图片 |
+| file | 文件 |
