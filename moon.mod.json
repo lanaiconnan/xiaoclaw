@@ -11,6 +11,8 @@
       "output": "dist/xiaoclaw-gc.wasm"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "moonbitlang/core": "0.8.3"
+  },
   "dev-dependencies": {}
 }

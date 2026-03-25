@@ -280,3 +280,94 @@ xiaoclaw memory             # 管理记忆
 
 *设计完成时间: 2026-03-24*
 *深海团队出品*
+---
+
+## v2.0 新功能设计
+
+### 新功能优先级
+
+| 优先级 | 功能 | 理由 |
+|--------|------|------|
+| P0 | CLI 命令行 | 提升可用性 |
+| P0 | 错误处理 | 提升稳定性 |
+| P1 | 日志系统 | 提升可观测性 |
+| P1 | Discord 通道 | 扩大用户群 |
+| P2 | WhatsApp 通道 | 扩大用户群 |
+| P2 | 配置热更新 | 提升运维体验 |
+| P3 | Plugin 系统 | 提升扩展性 |
+
+### CLI 设计
+
+```bash
+# 启动服务
+xiaoclaw start
+
+# 添加定时任务
+xiaoclaw schedule add "0 9 * * *" "Send daily summary"
+
+# 查看状态
+xiaoclaw status
+
+# 配置管理
+xiaoclaw config set TELEGRAM_TOKEN xxx
+xiaoclaw config get TELEGRAM_TOKEN
+
+# 日志查看
+xiaoclaw logs --tail 100
+```
+
+### 错误处理设计
+
+```moonbit
+// Result 类型错误处理
+fn handle_error(result: Result[String, Error]) -> String {
+  match result {
+    Ok(value) => value,
+    Err(e) => {
+      log_error("Error: \(e.message)")
+      "An error occurred"
+    }
+  }
+}
+```
+
+### 日志系统设计
+
+```moonbit
+// 日志级别
+enum LogLevel {
+  Debug
+  Info
+  Warn
+  Error
+}
+
+// 日志输出
+struct Logger {
+  level: LogLevel
+  outputs: Array[LogOutput]
+}
+
+trait LogOutput {
+  fn write(self: Self, msg: String) -> Unit
+}
+
+// 输出目标
+struct ConsoleOutput
+struct FileOutput { path: String }
+struct RemoteOutput { url: String }
+```
+
+### Discord 通道设计
+
+```moonbit
+struct DiscordChannel {
+  token: String
+  intents: Int
+  base_url: String
+}
+
+// Discord Intent flags
+const GUILD_MESSAGES = 1 << 9
+const MESSAGE_CONTENT = 1 << 15
+```

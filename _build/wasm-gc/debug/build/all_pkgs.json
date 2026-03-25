@@ -1,0 +1,354 @@
+{
+  "packages": [
+    {
+      "root": "moonbitlang/core",
+      "rel": "abort",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/abort/abort.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "argparse",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/argparse/argparse.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "array",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/array/array.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bench",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bench/bench.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bigint",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bigint/bigint.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bool",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bool/bool.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "buffer",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/buffer/buffer.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "builtin",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/builtin/builtin.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "byte",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/byte/byte.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bytes",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bytes/bytes.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bytes/internal/regex_engine",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bytes/internal/regex_engine/regex_engine.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bytes/internal/regex_engine/ast",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bytes/internal/regex_engine/ast/ast.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "bytes/internal/regex_engine/symbol_map",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/bytes/internal/regex_engine/symbol_map/symbol_map.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "char",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/char/char.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "cmp",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/cmp/cmp.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "coverage",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/coverage/coverage.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "debug",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/debug/debug.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "deque",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/deque/deque.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "double",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/double/double.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "encoding/ascii",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/encoding/ascii/ascii.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "encoding/base64",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/encoding/base64/base64.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "encoding/utf16",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/encoding/utf16/utf16.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "encoding/utf8",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/encoding/utf8/utf8.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "env",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/env/env.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "error",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/error/error.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "float",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/float/float.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "hashmap",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/hashmap/hashmap.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "hashset",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/hashset/hashset.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/array",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/array/array.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/hashmap",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/hashmap/hashmap.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/hashset",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/hashset/hashset.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/internal/path",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/internal/path/path.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/internal/sparse_array",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/internal/sparse_array/sparse_array.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/priority_queue",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/priority_queue/priority_queue.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/sorted_map",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/sorted_map/sorted_map.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "immut/sorted_set",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/immut/sorted_set/sorted_set.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "int",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/int/int.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "int16",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/int16/int16.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "int64",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/int64/int64.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "internal/regex_engine/automata",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/internal/regex_engine/automata/automata.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "internal/regex_engine/shared_types",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/internal/regex_engine/shared_types/shared_types.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "internal/regex_engine/shared_types/rechar_set",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/internal/regex_engine/shared_types/rechar_set/rechar_set.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "json",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/json/json.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "list",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/list/list.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "math",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/math/math.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "option",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/option/option.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "prelude",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/prelude/prelude.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "priority_queue",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/priority_queue/priority_queue.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "queue",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/queue/queue.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "quickcheck",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/quickcheck/quickcheck.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "quickcheck/splitmix",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/quickcheck/splitmix/splitmix.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "random",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/random/random.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "random/internal/random_source",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/random/internal/random_source/random_source.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "ref",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/ref/ref.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "result",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/result/result.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "set",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/set/set.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "sorted_map",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/sorted_map/sorted_map.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "sorted_set",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/sorted_set/sorted_set.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "strconv",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/strconv/strconv.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "string",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/string/string.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "string/internal/regex_engine",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/string/internal/regex_engine/regex_engine.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "string/internal/regex_engine/ast",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/string/internal/regex_engine/ast/ast.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "string/internal/regex_engine/symbol_map",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/string/internal/regex_engine/symbol_map/symbol_map.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "string/internal/regex_parser",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/string/internal/regex_parser/regex_parser.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "test",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/test/test.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "tuple",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/tuple/tuple.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "uint",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/uint/uint.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "uint16",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/uint16/uint16.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "uint64",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/uint64/uint64.mi"
+    },
+    {
+      "root": "moonbitlang/core",
+      "rel": "unit",
+      "artifact": "/Users/lanaiconan/.qclaw/workspace/xiaoclaw/_build/wasm-gc/debug/build/unit/unit.mi"
+    }
+  ]
+}
