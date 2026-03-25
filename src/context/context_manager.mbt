@@ -227,6 +227,9 @@ fn ContextManager::compress_hybrid(self: ContextManager) -> Unit {
     kept_tokens = kept_tokens + summary_entry.token_estimate
   }
 
+  // 🔴 Fix #7: 压缩后按时间戳排序，保证对话历史顺序正确
+  kept.sort_by(fn(a, b) { a.timestamp - b.timestamp })
+
   // 更新状态
   self.state.entries = kept
   self.state.total_tokens = kept_tokens
@@ -426,15 +429,18 @@ fn ContextManager::get_snapshot(self: ContextManager) -> String {
 }
 
 // 创建子上下文（用于独立子任务）
-fn ContextManager::create_child_context(self: ContextManager, task_name: String) -> ContextManager {
+fn ContextManager::create_child_context(self : ContextManager, task_name : String) -> ContextManager {
   let child_session_id = "\(self.state.session_id)-\(task_name)"
-
   let mut child = ContextManager::new(child_session_id, self.state.max_tokens)
 
   // 注入父上下文快照
   let snapshot = self.get_snapshot()
   child.add(StateSnapshot, snapshot, 10)
-  child.pin_entry(child.state.entries[0].id)
+
+  // 🔴 Fix #8: 边界检查，避免 entries 为空时 panic
+  if child.state.entries.length() > 0 {
+    child.pin_entry(child.state.entries[0].id)
+  }
 
   log_info("Child context created for task: \(task_name)")
   child

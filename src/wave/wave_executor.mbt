@@ -157,75 +157,71 @@ fn WavePlanBuilder::add_after(
 }
 
 // 构建 Wave 计划（拓扑排序）
-fn WavePlanBuilder::build(self: WavePlanBuilder) -> WavePlan {
-  let waves = self.topological_sort()
-
-  WavePlan::{
-    id: "plan-\(now())",
-    name: self.name,
-    waves: waves,
-    total_nodes: self.nodes.length(),
-    created_at: now(),
+fn WavePlanBuilder::build(self : WavePlanBuilder) -> Result[WavePlan, String] {
+  match self.topological_sort() {
+    Ok(waves) => Ok({
+      id: "plan-\(now())",
+      name: self.name,
+      waves,
+      total_nodes: self.nodes.length(),
+      created_at: now(),
+    })
+    Err(e) => Err(e)
   }
 }
 
-// 拓扑排序 → 分配 Wave
-fn WavePlanBuilder::topological_sort(self: WavePlanBuilder) -> Array[Wave] {
-  // Kahn's Algorithm
-  let mut in_degree = Map::new()
-  let mut wave_map = Map::new()
+// 拓扑排序 → 分配 Wave（Kahn's Algorithm）
+fn WavePlanBuilder::topological_sort(self : WavePlanBuilder) -> Result[Array[Wave], String] {
+  let mut in_degree : Map[String, Int] = {}
+  let mut wave_map  : Map[String, Int] = {}
 
-  // 初始化入度
   for id, node in self.nodes {
-    in_degree.set(id, node.dependencies.length())
+    in_degree[id] = node.dependencies.length()
   }
 
-  // 找出所有入度为 0 的节点（Wave 0）
-  let mut current_wave_nodes = []
+  let mut current_wave_nodes : Array[String] = []
   for id, degree in in_degree {
     if degree == 0 {
       current_wave_nodes.push(id)
-      wave_map.set(id, 0)
+      wave_map[id] = 0
     }
   }
 
-  let mut waves = []
+  let mut waves     : Array[Wave] = []
   let mut wave_index = 0
-  let mut processed = 0
+  let mut processed  = 0
 
   loop {
     if current_wave_nodes.length() == 0 {
       break
     }
 
-    // 创建当前 Wave
-    let wave_specs = current_wave_nodes.map(|id| {
-      let node = self.nodes.get(id).unwrap()
+    let wave_nodes : Array[WaveNode] = current_wave_nodes.map(fn(id) {
+      let node = self.nodes[id].unwrap()
       node.wave_index = wave_index
       node
     })
 
-    waves.push(Wave::{
+    waves.push({
       index: wave_index,
-      nodes: wave_specs,
+      nodes: wave_nodes,
       status: Pending,
       started_at: None,
       completed_at: None,
-      parallel: wave_specs.length() > 1,
+      parallel: wave_nodes.length() > 1,
     })
 
     processed = processed + current_wave_nodes.length()
 
-    // 找出下一 Wave 的节点
-    let mut next_wave_nodes = []
+    let mut next_wave_nodes : Array[String] = []
     for id in current_wave_nodes {
-      let node = self.nodes.get(id).unwrap()
+      let node = self.nodes[id].unwrap()
       for dep_id in node.dependents {
-        let degree = in_degree.get(dep_id).unwrap_or(0) - 1
-        in_degree.set(dep_id, degree)
+        let degree = in_degree[dep_id].or(0) - 1
+        in_degree[dep_id] = degree
         if degree == 0 {
           next_wave_nodes.push(dep_id)
-          wave_map.set(dep_id, wave_index + 1)
+          wave_map[dep_id] = wave_index + 1
         }
       }
     }
@@ -234,12 +230,13 @@ fn WavePlanBuilder::topological_sort(self: WavePlanBuilder) -> Array[Wave] {
     wave_index = wave_index + 1
   }
 
-  // 检测循环依赖
+  // 🔴 Fix #12: 循环依赖检测返回 Err，不再静默
   if processed < self.nodes.length() {
-    log_error("Circular dependency detected in wave plan!")
+    let unprocessed = self.nodes.keys().filter(fn(id) { wave_map[id].is_empty() }).collect()
+    return Err("Circular dependency detected! Unresolved nodes: \(unprocessed.join(", "))")
   }
 
-  waves
+  Ok(waves)
 }
 
 // ============ 执行 Wave 计划 ============
