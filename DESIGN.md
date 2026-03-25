@@ -371,3 +371,62 @@ struct DiscordChannel {
 const GUILD_MESSAGES = 1 << 9
 const MESSAGE_CONTENT = 1 << 15
 ```
+
+---
+
+## CLI 设计
+
+### 命令结构
+
+```
+xiaoclaw <command> [subcommand] [options]
+```
+
+### 子命令
+
+| 命令 | 描述 |
+|------|------|
+| `start` | 启动服务 |
+| `stop` | 停止服务 |
+| `status` | 查看状态 |
+| `config` | 配置管理 |
+| `schedule` | 定时任务 |
+| `logs` | 日志查看 |
+| `plugin` | 插件管理 |
+| `test` | 测试运行 |
+| `benchmark` | 性能测试 |
+
+### 输出格式
+
+支持 `--json` 选项输出 JSON 格式，便于脚本集成。
+
+---
+
+## 测试设计
+
+### 测试框架
+
+- TestRunner: 测试运行器
+- TestSuite: 测试套件
+- TestResult: 测试结果
+
+### 断言函数
+
+- assert_true / assert_false
+- assert_eq / assert_ne
+- assert_contains / assert_starts_with
+- assert_len
+
+### 测试套件
+
+- Config: 配置模块测试
+- Context: 上下文测试
+- Memory: 存储测试
+- Scheduler: 调度器测试
+- Error: 错误处理测试
+- Plugin: 插件系统测试
+
+### 覆盖率目标
+
+- 行覆盖: 80%
+- 分支覆盖: 75%
