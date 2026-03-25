@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "project": "XiaoClaw",
+  "mode": "interactive",
+  "context": {
+    "max_tokens": 200000,
+    "compression_threshold": 0.75,
+    "strategy": "hybrid"
+  },
+  "spec": {
+    "auto_verify": true,
+    "save_summaries": true,
+    "spec_dir": ".planning/specs/"
+  },
+  "workflow": {
+    "research": true,
+    "plan_check": true,
+    "verifier": true,
+    "auto_advance": false
+  },
+  "git": {
+    "atomic_commits": true,
+    "commit_docs": true
+  }
+}
