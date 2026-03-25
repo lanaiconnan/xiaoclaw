@@ -100,3 +100,11 @@ struct FeishuConfig {
 //   discord: DiscordConfig
 //   feishu: FeishuConfig  // 新增
 // }
+
+// WhatsApp 配置
+struct WhatsAppConfig {
+  api_key: String
+  phone_number_id: String
+  webhook_verify_token: String
+  enabled: Bool
+}

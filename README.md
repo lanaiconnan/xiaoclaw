@@ -193,3 +193,47 @@ MIT License
 ---
 
 **深海团队出品** 🦞
+
+---
+
+## 📱 WhatsApp 集成
+
+### 配置
+
+在 `.env` 文件中添加：
+
+```bash
+WHATSAPP_API_KEY=your_api_key
+WHATSAPP_PHONE_NUMBER_ID=your_phone_id
+WHATSAPP_WEBHOOK_TOKEN=your_webhook_token
+WHATSAPP_ENABLED=true
+```
+
+### 创建 WhatsApp 业务账户
+
+1. 访问 [WhatsApp Business Platform](https://www.whatsapp.com/business/)
+2. 创建业务账户
+3. 获取 Phone Number ID 和 API Key
+4. 配置 Webhook URL
+
+### 使用
+
+在 WhatsApp 中发送消息：
+
+```
+帮我总结今天的工作
+每天早上9点发送新闻摘要
+```
+
+### 支持的消息类型
+
+| 类型 | 说明 |
+|------|------|
+| text | 纯文本 |
+| image | 图片 |
+| audio | 语音 |
+| video | 视频 |
+| document | 文件 |
+| location | 位置 |
+| template | 模板消息 |
+| interactive | 交互消息 |
