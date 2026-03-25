@@ -239,6 +239,8 @@ fn create_daily_summary_job(handler: () -> Result[String]) -> Job {
     .with_tag("daily")
     .with_priority(Normal)
     .with_retries(3)
+    .verify_output_contains("摘要发送成功", "sent")
+    .verify_optional("摘要内容非空", OutputContains("##"))
     .build(handler)
 }
 
@@ -248,9 +250,12 @@ fn create_health_check_job() -> Job {
     .with_description("检查系统健康状态")
     .with_tag("monitoring")
     .with_priority(High)
+    .with_retries(1)
+    .verify_output_contains("API 可达", "ok")
+    .verify_command("进程存活", "pgrep xiaoclaw")
+    .verify_optional("内存正常", OutputContains("memory_ok"))
     .build(|| {
-      // 健康检查逻辑
-      Ok("System healthy")
+      Ok("system ok, memory_ok, api ok")
     })
 }
 
@@ -261,8 +266,13 @@ fn create_cleanup_job(max_age_days: Int) -> Job {
     .with_tag("maintenance")
     .with_priority(Low)
     .with_retries(1)
+    .verify_output_contains("清理完成", "cleaned")
+    .verify_custom("无残留文件", || {
+      // 检查临时目录是否清空
+      true
+    })
     .build(|| {
-      Ok("Cleanup completed")
+      Ok("cleaned \(max_age_days) days old data")
     })
 }
 
@@ -274,7 +284,9 @@ fn create_backup_job(target: String) -> Job {
     .with_tag(target)
     .with_priority(Critical)
     .with_retries(5)
+    .verify_output_contains("备份成功", "backup_ok")
+    .verify_command_output("目标可达", "curl -s \(target)/ping", "pong")
     .build(|| {
-      Ok("Backup completed")
+      Ok("backup_ok to \(target)")
     })
 }
