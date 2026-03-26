@@ -66,6 +66,11 @@ fn run_new_test_suites() -> Unit {
   runner.add_suite(jobs_test_suite())
   runner.add_suite(context_test_suite())
   runner.add_suite(wave_test_suite())
+  runner.add_suite(spec_test_suite())
+  runner.add_suite(router_test_suite())
+  runner.add_suite(benchmark_test_suite())
+  runner.add_suite(cli_test_suite())
+  runner.add_suite(whatsapp_test_suite())
 
   // 运行并打印报告
   runner.run_all()
@@ -94,8 +99,8 @@ fn run_all_tests() -> Unit {
   test_cron_parse()
   println()
 
-  // 新增：Jobs / Context Manager / Wave Executor 测试
-  println("── New Test Suites (Jobs / Context / Wave) ──")
+  // 新增：Jobs / Context / Wave / Spec / Router / Benchmark / CLI / WhatsApp 测试
+  println("── New Test Suites (Jobs / Context / Wave / Spec / Router / Benchmark / CLI / WhatsApp) ──")
   run_new_test_suites()
 
   println()
